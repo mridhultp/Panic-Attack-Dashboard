@@ -6,18 +6,19 @@ This project delivers an end-to-end data analysis pipeline designed to explore p
 
 ---
 
-## 🗄️ Database Architecture & Setup (Snowflake)
-The data pipeline originates in **Snowflake** under the `PowerBIProject` database [1]. The raw dataset is ingested into the `Panic_Attack_Data` table, which tracks patient demographics, physiological metrics (e.g., heart rate), symptoms, medical history, lifestyle factors, and panic severity scores [1].
+## 🗄️ Database Architecture & Setup (Snowflake to power bi web deployement)
+The data pipeline originates in **Snowflake** under the `PowerBIProject` database. The raw dataset is ingested into the `Panic_Attack_Data` table, which tracks patient demographics, physiological metrics (e.g., heart rate), symptoms, medical history, lifestyle factors, and panic severity scores.
 
+<img width="1298" height="457" alt="image" src="https://github.com/user-attachments/assets/fe0deef5-01ed-425b-8251-9b3e236f7ac3" />
 
 ---
 
 ## 🔍 Data Quality & Exploratory SQL Analysis
-Before building visualizations, extensive exploratory data analysis (EDA) and data cleansing queries were run in a **Snowflake SQL Notebook** [2]:
+Before building visualizations, extensive exploratory data analysis (EDA) and data cleansing queries were run in a **Snowflake SQL Notebook**:
 
-* **Primary Key Integrity**: Confirmed that the `ID` column contains zero null values and no duplicate records [2].
+* **Primary Key Integrity**: Confirmed that the `ID` column contains zero null values and no duplicate records.
 * **Data Hygiene**: Verified text columns (`GENDER`, `TRIGGER_REASON`, `MEDICAL_HISTORY`) for leading or trailing whitespace using `TRIM()` functions.
-* **Cardinality & Distribution**: Audited unique values and record counts across demographics, triggers, and medical history classifications (including Anxiety, Depression, and PTSD) [2].
+* **Cardinality & Distribution**: Audited unique values and record counts across demographics, triggers, and medical history classifications (including Anxiety, Depression, and PTSD).
 
 <img width="1897" height="932" alt="Snowflake_DB_Table_query" src="https://github.com/user-attachments/assets/9edd8a50-8ed6-4ca9-8f99-0b993c3df4d3" />
 
@@ -27,9 +28,9 @@ Before building visualizations, extensive exploratory data analysis (EDA) and da
 ## 📊 Data Visualisation & DAX Modeling (Power BI)
 The data was imported into **Power BI Desktop**, where data relationships were modeled and custom **DAX measures** were developed for deep diagnostic insights:
 
-* **Symptom Analysis**: Visualised symptom prevalence across patients, evaluating rates of dizziness, trembling, sweating, shortness of breath, and chest pain [3].
-* **Lifestyle & Risk Profiling**: Analyzed relationships between panic metrics and weekly alcohol consumption, sleep duration, and attack durations [4].
-* **Demographic Segmentation**: Calculated average metrics for Sleep Hours, Panic Score, and Panic Attack Frequency (PAF) segmented across age groups (Adolescents vs. Adults) and specific triggers [5].
+* **Symptom Analysis**: Visualised symptom prevalence across patients, evaluating rates of dizziness, trembling, sweating, shortness of breath, and chest pain .
+* **Lifestyle & Risk Profiling**: Analyzed relationships between panic metrics and weekly alcohol consumption, sleep duration, and attack durations.
+* **Demographic Segmentation**: Calculated average metrics for Sleep Hours, Panic Score, and Panic Attack Frequency (PAF) segmented across age groups (Adolescents vs. Adults) and specific triggers.
 
 
 <img width="1907" height="975" alt="Page 2" src="https://github.com/user-attachments/assets/dea70039-ba44-43a2-9273-5d89915b1044" />
@@ -42,7 +43,7 @@ The data was imported into **Power BI Desktop**, where data relationships were m
 ---
 
 ## 🚀 Deployment (Power BI Service)
-The completed report was published directly to **Power BI Service**, enabling cloud access, dynamic filtering via slicers (Gender, Trigger Reason, Panic Score), and interactive stakeholder exploration [3, 4].
+The completed report was published directly to **Power BI Service**, enabling cloud access, dynamic filtering via slicers (Gender, Trigger Reason, Panic Score), and interactive stakeholder exploration.
 
 https://app.powerbi.com/links/VPOYhmzKno?ctid=21a629b4-4c4b-450c-a3a8-69d7921bf6c9&pbi_source=linkShare
 
